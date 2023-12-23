@@ -1,0 +1,22 @@
+{
+    "name": "ambit/task",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Volodymyr Voznyi",
+            "email": "ambitmain@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.8",
+        "phpunit/phpunit": "^10.5"
+    }
+}
