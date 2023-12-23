@@ -12,15 +12,12 @@ foreach (explode("\n", file_get_contents($argv[1])) as $row) {
     $value[2] = trim($p2[1], '"}');
 
     $binResults = file_get_contents('https://lookup.binlist.net/' .$value[0]);
-//    var_dump($value[0]);die;
     if (!$binResults)
         die('error!');
     $r = json_decode($binResults);
     $isEu = isEu($r->country->alpha2);
 
-//    $rate = @json_decode(file_get_contents('https://api.exchangeratesapi.io/latest'), true)['rates'][$value[2]];
     $rate = @json_decode(file_get_contents('https://developers.paysera.com/tasks/api/currency-exchange-rates '), true)['rates'][$value[2]];
-//    var_dump(file_get_contents('https://developers.paysera.com/tasks/api/currency-exchange-rates '));die;
     if ($value[2] == 'EUR' or $rate == 0) {
         $amntFixed = $value[1];
     }
